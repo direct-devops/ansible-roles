@@ -29,6 +29,7 @@
   ansible.builtin.copy:
     src: /tmp/apache-tomcat-{{ tomcat_version }}/
     dest: "{{ tomcat_home }}"
+    recurse: yes
 
 - name: Change file ownership and permissions
   ansible.builtin.file:
