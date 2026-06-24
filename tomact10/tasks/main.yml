@@ -64,10 +64,6 @@
     owner: root
     group: root
     mode: "0644"
+  notify: Reload systemd and restart Tomcat
 
-- name: Reload systemd and restart Tomcat
-  ansible.builtin.systemd:
-    name: tomcat
-    state: restarted
-    enabled: yes
-    daemon_reload: yes
+

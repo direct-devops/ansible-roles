@@ -1,3 +1,9 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # handlers file for tomact10
+- name: Reload systemd and restart Tomcat
+  ansible.builtin.systemd:
+    name: tomcat
+    state: restarted
+    enabled: yes
+    daemon_reload: yes

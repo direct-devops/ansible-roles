@@ -1,3 +1,7 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # defaults file for tomact10
+
+tomcat_version: 10.1.55
+tomcat_home: /opt/tomcat
+java_version: openjdk-21-jdk
