@@ -29,7 +29,7 @@
   ansible.builtin.copy:
     src: /tmp/apache-tomcat-{{ tomcat_version }}/
     dest: "{{ tomcat_home }}"
-    recurse: yes
+    remote_src: yes
 
 - name: Change file ownership and permissions
   ansible.builtin.file:
@@ -42,7 +42,7 @@
 - name: Deploy tomcat-users.xml
   ansible.builtin.template:
     src: templates/tomcat-users.xml.j2
-    dest: "{{ tomcat_home }}/apache-tomcat-{{ tomcat_version }}/conf/tomcat-users.xml"
+    dest: "{{ tomcat_home }}/conf/tomcat-users.xml"
     owner: tomcat
     group: tomcat
     mode: "0644"
@@ -50,7 +50,7 @@
 - name: Deploy context.xml
   ansible.builtin.template:
     src: templates/context.xml.j2
-    dest: "{{ tomcat_home }}/apache-tomcat-{{ tomcat_version }}/webapps/manager/META-INF/context.xml"
+    dest: "{{ tomcat_home }}/webapps/manager/META-INF/context.xml"
     owner: tomcat
     group: tomcat
     mode: "0644"
