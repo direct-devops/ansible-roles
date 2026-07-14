@@ -37,7 +37,7 @@ jobs:
 
       # add docker buildx
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
+        uses: direct-devops/setup-buildx-action@master
 
       - name: docker validation 
         run: |
